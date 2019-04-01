@@ -13,12 +13,24 @@ public class Movimiento : MonoBehaviour {
     int floorMask;
     float camRayLength = 100f;
 
+    //Transform transform;
+
+    public KeyCode W;
+    public KeyCode S;
+    public KeyCode A;
+    public KeyCode D;
+    public KeyCode f_arriba;
+    public KeyCode f_abajo;
+    public KeyCode f_izquierda;
+    public KeyCode f_derecha;
+
 
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
+        //transform.GetComponent<Transform>();
 
     }
 
@@ -45,8 +57,7 @@ public class Movimiento : MonoBehaviour {
 
     void Turning()
     {
-
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        /*Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit floorHit;
 
@@ -57,7 +68,116 @@ public class Movimiento : MonoBehaviour {
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRigidbody.MoveRotation(newRotation);
+        }*/
+
+        if(Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+        {
+            if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, -45, 0);
+            }
+
+            else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 45, 0);
+            }
+
+            else
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
+            }       
+
         }
+
+        else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+        {
+
+            if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, -135, 0);
+            }
+
+            else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 135, 0);
+            }
+
+            else
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 180, 0);
+            }        
+
+        }
+
+        else if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+        {
+
+            if (Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, -45, 0);
+            }
+
+            else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, -135, 0);
+            }
+
+            else
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, -90, 0);
+            }
+
+
+        }
+
+        else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+        {
+
+            if (Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 45, 0);
+            }
+
+            else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 135, 0);
+            }
+
+            else
+            {
+                GetComponent<Transform>().eulerAngles = new Vector3(0, 90, 0);
+            }
+
+
+        }
+
+        /*else if((Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba)) && (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda)))
+        {
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, -45, 0);
+
+        }
+
+        else if ((Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba)) && (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha)))
+        {
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 45, 0);
+
+        }
+
+        else if ((Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo)) && (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda)))
+        {
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, -135, 0);
+
+        }
+
+        else if ((Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo)) && (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha)))
+        {
+
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 135, 0);
+
+        }*/
 
     }
 
