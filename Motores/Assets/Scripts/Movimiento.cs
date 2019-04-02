@@ -15,14 +15,7 @@ public class Movimiento : MonoBehaviour {
 
     //Transform transform;
 
-    public KeyCode W;
-    public KeyCode S;
-    public KeyCode A;
-    public KeyCode D;
-    public KeyCode f_arriba;
-    public KeyCode f_abajo;
-    public KeyCode f_izquierda;
-    public KeyCode f_derecha;
+
 
 
     void Awake()
@@ -70,14 +63,14 @@ public class Movimiento : MonoBehaviour {
             playerRigidbody.MoveRotation(newRotation);
         }*/
 
-        if(Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, -45, 0);
             }
 
-            else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, 45, 0);
             }
@@ -89,15 +82,15 @@ public class Movimiento : MonoBehaviour {
 
         }
 
-        else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
 
-            if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, -135, 0);
             }
 
-            else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, 135, 0);
             }
@@ -109,15 +102,15 @@ public class Movimiento : MonoBehaviour {
 
         }
 
-        else if (Input.GetKeyDown(A) || Input.GetKeyDown(f_izquierda))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
 
-            if (Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, -45, 0);
             }
 
-            else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, -135, 0);
             }
@@ -130,15 +123,15 @@ public class Movimiento : MonoBehaviour {
 
         }
 
-        else if (Input.GetKeyDown(D) || Input.GetKeyDown(f_derecha))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
 
-            if (Input.GetKeyDown(W) || Input.GetKeyDown(f_arriba))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, 45, 0);
             }
 
-            else if (Input.GetKeyDown(S) || Input.GetKeyDown(f_abajo))
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 GetComponent<Transform>().eulerAngles = new Vector3(0, 135, 0);
             }
