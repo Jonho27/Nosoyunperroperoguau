@@ -61,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Low Poly Animated People\RandomAnimationPicker.cs" />
+    <Compile Include="Assets\LowPoly\Characters\Low Poly Animated People\RandomAnimationPicker.cs" />
     <Compile Include="Assets\Scripts\MoimientoCamara.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
     <Reference Include="UnityEditor.StandardEvents">

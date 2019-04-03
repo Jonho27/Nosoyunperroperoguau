@@ -10,8 +10,8 @@ public class Movimiento : MonoBehaviour {
     Vector3 movimiento;//contiene la x, y, z del personaje
     Rigidbody playerRigidbody;
     Animator anim;
-    int floorMask;
-    float camRayLength = 100f;
+    //int floorMask;
+    //float camRayLength = 100f;
 
     //Transform transform;
 
@@ -20,7 +20,7 @@ public class Movimiento : MonoBehaviour {
 
     void Awake()
     {
-        floorMask = LayerMask.GetMask("Floor");
+        //floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
         //transform.GetComponent<Transform>();
