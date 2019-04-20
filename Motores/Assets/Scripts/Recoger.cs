@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class Recoger : MonoBehaviour
 {
-   public int cantidad = 1;
-   public bool key = false;
+    public bool key = false;
+    public bool tieneLlave = false;
 
-   void Update()
-    {
-        
-        if (Input.GetKeyDown("space") && key == true)
-        {
+   void Update(){
+       if (Input.GetKey(KeyCode.Space) && key == true){
             //print("space key was pressed");
             Destroy(gameObject);
-        }
-    }
+            tieneLlave = true;
+            }
+   }
 
    void OnTriggerEnter(Collider Personaje){
        if (Personaje.CompareTag("FPS")){
-           Personaje.GetComponent<Controlador>().RecogerObjeto(cantidad);
+           print("Dentro");
            key = true;
-       }
-   }
+        }
+    }
+
+    void OnTriggerExit(Collider Personaje){
+       if (Personaje.CompareTag("FPS")){
+           print("Fuera");
+           key = false;
+        }
+    }
 }
