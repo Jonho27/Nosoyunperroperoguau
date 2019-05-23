@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovimientoEnemigo : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class MovimientoEnemigo : MonoBehaviour
     private float patrolTimer;
     private int puntosRutaIndex;
 
+
+    public bool HOLA;
+    private float pillado;
+
     void Awake()
     {
         vistaEnemigo = GetComponent<VistaEnemigo>();
@@ -28,12 +33,16 @@ public class MovimientoEnemigo : MonoBehaviour
         puntosRutaIndex = 0;
 
 
+        HOLA = false;
+        pillado = 0;
+
+
     }
 
     void Update()
     {
 
-        if(vistaEnemigo.playerInSight == false)
+        if (vistaEnemigo.playerInSight == false && EnemyManager.visto == false)
         {
 
             nav.speed = 3.5f;
@@ -47,7 +56,7 @@ public class MovimientoEnemigo : MonoBehaviour
                     anim.SetBool("isWalking", true);
                     if (puntosRutaIndex == puntosRuta.Length - 1)
                         puntosRutaIndex = 0;
-                    
+
                     else
                         puntosRutaIndex++;
 
@@ -63,10 +72,49 @@ public class MovimientoEnemigo : MonoBehaviour
 
         }
 
+        else if (EnemyManager.visto == true && vistaEnemigo.playerInSight == false) //AÑADIDO POR JORGE PARA EL ABUELO
+        {
+            HOLA = true;
+            nav.destination = EnemyManager.utimaPosicion;
+
+            if (nav.remainingDistance < nav.stoppingDistance)
+            {
+                anim.SetBool("isWalking", false);
+                patrolTimer += Time.deltaTime;
+                if (patrolTimer >= patrolWaitTime)
+                {
+                    anim.SetBool("isWalking", true);
+                    if (puntosRutaIndex == puntosRuta.Length - 1)
+                        puntosRutaIndex = 0;
+
+                    else
+                        puntosRutaIndex++;
+
+                    patrolTimer = 0f;
+                    EnemyManager.visto = false;
+                    nav.destination = puntosRuta[puntosRutaIndex].position;
+                }
+            }
+
+            else
+                patrolTimer = 0f;
+
+            /*anim.SetBool("isWalking", true);
+            nav.destination = puntosRuta[puntosRutaIndex].position;*/
+        }
+
         else
         {
+            pillado += Time.deltaTime;
             nav.speed = 0f;
             anim.SetBool("isWalking", false);
+
+            if(pillado >= 3f)
+            {
+                //Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            
 
         }
 
