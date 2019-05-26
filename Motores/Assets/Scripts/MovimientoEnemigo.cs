@@ -14,7 +14,7 @@ public class MovimientoEnemigo : MonoBehaviour
     //Vector3 posicion1 = new Vector3(55.4f, 0.5f, 177);
     //Vector3 posicion2 = new Vector3(65.2f, 0.5f, 62.8f);
 
-    public float patrolWaitTime = 1f;
+    public float patrolWaitTime = 0.5f;
     public Transform[] puntosRuta;
     private float patrolTimer;
     private int puntosRutaIndex;

@@ -56,13 +56,15 @@
      <Compile Include="Assets\EnemySight.cs" />
      <Compile Include="Assets\LowPoly\Characters\Low Poly Animated People\RandomAnimationPicker.cs" />
      <Compile Include="Assets\Scripts\AbueloMovimiento.cs" />
-     <Compile Include="Assets\Scripts\Controlador.cs" />
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameControlManager.cs" />
      <Compile Include="Assets\Scripts\MoimientoCamara.cs" />
      <Compile Include="Assets\Scripts\Movimiento.cs" />
      <Compile Include="Assets\Scripts\MovimientoEnemigo.cs" />
      <Compile Include="Assets\Scripts\Recoger.cs" />
+     <Compile Include="Assets\Scripts\RecogerCartera.cs" />
+     <Compile Include="Assets\Scripts\RecogerMochila.cs" />
+     <Compile Include="Assets\Scripts\RotacionColeccionables.cs" />
      <Compile Include="Assets\Scripts\VistaAbuelo.cs" />
      <Compile Include="Assets\Scripts\VistaEnemigo.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

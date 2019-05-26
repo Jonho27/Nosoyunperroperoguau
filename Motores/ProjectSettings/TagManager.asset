@@ -7,6 +7,9 @@ TagManager:
   - FPS
   - Enemy
   - Key
+  - Door
+  - Collectable
+  - Collectable1
   layers:
   - Default
   - TransparentFX

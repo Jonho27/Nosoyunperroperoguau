@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Recoger : MonoBehaviour
 {
-    public bool tieneLlave;
     bool activo;
     GameObject player, key;
-    GameManager game;
+    GameControlManager game;
 
     void Awake(){
         player = GameObject.FindGameObjectWithTag("Player");
         key = GameObject.FindGameObjectWithTag("Key");
-        tieneLlave = false;
         activo = false;
+        game = new GameControlManager();
     }
 
    void Update(){
-        if (Input.GetKey(KeyCode.Space) == true && activo == true){
-            tieneLlave = true;
-            GameManager.abrirPuerta = true;
+        key.transform.Rotate(0,-1,0);
+        if (Input.GetKeyDown(KeyCode.Space) == true && activo == true){
+            GameControlManager.abrirPuerta = true;
+            GameControlManager.objetoCogido = true;
             Destroy(key);
         }
    }
-   
+
    void OnTriggerEnter(Collider other){
        if (other.gameObject == player){
            activo = true;
@@ -35,9 +35,6 @@ public class Recoger : MonoBehaviour
            activo = false;
         }
     }
-
-
-
 }
 
        
