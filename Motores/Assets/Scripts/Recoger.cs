@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class Recoger : MonoBehaviour
 {
-    public bool key = false;
-    public bool tieneLlave = false;
+    public bool tieneLlave;
+    bool activo;
+    GameObject player, key;
+    GameManager game;
+
+    void Awake(){
+        player = GameObject.FindGameObjectWithTag("Player");
+        key = GameObject.FindGameObjectWithTag("Key");
+        tieneLlave = false;
+        activo = false;
+    }
 
    void Update(){
-       if (Input.GetKey(KeyCode.Space) && key == true){
-            //print("space key was pressed");
-            Destroy(gameObject);
+        if (Input.GetKey(KeyCode.Space) == true && activo == true){
             tieneLlave = true;
-            }
+            GameManager.abrirPuerta = true;
+            Destroy(key);
+        }
    }
-
-   void OnTriggerEnter(Collider Personaje){
-       if (Personaje.CompareTag("FPS")){
-           print("Dentro");
-           key = true;
+   
+   void OnTriggerEnter(Collider other){
+       if (other.gameObject == player){
+           activo = true;
         }
     }
 
-    void OnTriggerExit(Collider Personaje){
-       if (Personaje.CompareTag("FPS")){
-           print("Fuera");
-           key = false;
+    void OnTriggerExit(Collider other){
+       if (other.gameObject == player){
+           activo = false;
         }
     }
+
+
+
 }
+
+       
