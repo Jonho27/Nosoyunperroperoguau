@@ -9,7 +9,7 @@ public class GameControlManager : MonoBehaviour
     GameObject door;
     bool activo;
 
-    public AudioClip sound, open, close;
+    public AudioClip sound, open, close, digital;
     AudioSource fuenteAudio;
     
 
@@ -19,6 +19,7 @@ public class GameControlManager : MonoBehaviour
         abrirPuerta = false;
         activo = false;
         fuenteAudio = GetComponent<AudioSource> ();
+
         objetoCogido = false;
         mochila = false;
         cartera = false;
@@ -57,4 +58,10 @@ public class GameControlManager : MonoBehaviour
         fuenteAudio.clip=sound;
         fuenteAudio.Play();
     }
+
+    /*public void sonidoDigital(){
+
+        fuenteAudio.clip=digital;
+        fuenteAudio.Play();
+    }*/
 }

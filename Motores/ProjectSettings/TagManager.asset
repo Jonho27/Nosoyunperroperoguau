@@ -10,6 +10,10 @@ TagManager:
   - Door
   - Collectable
   - Collectable1
+  - alert
+  - alert1
+  - alert2
+  - entorno
   layers:
   - Default
   - TransparentFX

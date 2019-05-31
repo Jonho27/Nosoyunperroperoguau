@@ -18,7 +18,7 @@ public class RecogerCartera : MonoBehaviour
    void Update(){
         cartera.transform.Rotate(0,-1,0);
         if (Input.GetKeyDown(KeyCode.Space) == true && activo == true){
-            GameControlManager.mochila = true;
+            GameControlManager.cartera = true;
             GameControlManager.objetoCogido = true;
             Destroy(cartera);
         }
