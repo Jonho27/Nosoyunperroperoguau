@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\RecogerMochila.cs" />
      <Compile Include="Assets\Scripts\RotacionColeccionables.cs" />
      <Compile Include="Assets\Scripts\RotacionIndicador.cs" />
+     <Compile Include="Assets\Scripts\SonidoBaño.cs" />
+     <Compile Include="Assets\Scripts\SonidoEntorno.cs" />
      <Compile Include="Assets\Scripts\VistaAbuelo.cs" />
      <Compile Include="Assets\Scripts\VistaEnemigo.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

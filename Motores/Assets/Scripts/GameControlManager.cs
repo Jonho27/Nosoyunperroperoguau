@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameControlManager : MonoBehaviour
 {
-    public static bool abrirPuerta, objetoCogido, mochila, cartera;    
+    public static bool abrirPuerta, objetoCogido, mochila, cartera, sonar, sonarBaño;    
     GameObject player;
     GameObject door;
     bool activo;
 
-    public AudioClip sound, open, close, digital;
+    public AudioClip sound, open, close, digital, baño;
     AudioSource fuenteAudio;
     
 
@@ -18,6 +18,8 @@ public class GameControlManager : MonoBehaviour
     {
         abrirPuerta = false;
         activo = false;
+        sonar = false;
+        sonarBaño = false;
         fuenteAudio = GetComponent<AudioSource> ();
 
         objetoCogido = false;
@@ -33,6 +35,16 @@ public class GameControlManager : MonoBehaviour
         if (objetoCogido == true){
             soundObject();
             objetoCogido = false;
+        }
+
+        if (sonar == true){
+            sonidoDigital();
+            sonar = false;
+        }
+
+        if (sonarBaño == true){
+            sonidoBaño();
+            sonarBaño = false;
         }
 
         if (Input.GetKey(KeyCode.Space) == true && abrirPuerta == true && activo == true){
@@ -59,9 +71,14 @@ public class GameControlManager : MonoBehaviour
         fuenteAudio.Play();
     }
 
-    /*public void sonidoDigital(){
+    public void sonidoDigital(){
 
         fuenteAudio.clip=digital;
         fuenteAudio.Play();
-    }*/
+    }
+    public void sonidoBaño(){
+
+        fuenteAudio.clip=baño;
+        fuenteAudio.Play();
+    }
 }
