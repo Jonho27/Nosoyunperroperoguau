@@ -15,6 +15,9 @@ TagManager:
   - alert2
   - entorno
   - "Ba\xF1o"
+  - Monedero
+  - Mochila
+  - Llaves
   layers:
   - Default
   - TransparentFX
