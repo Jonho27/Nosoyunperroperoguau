@@ -18,6 +18,7 @@ TagManager:
   - Monedero
   - Mochila
   - Llaves
+  - Enemigo
   layers:
   - Default
   - TransparentFX

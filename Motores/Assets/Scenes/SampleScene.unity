@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657665, g: 0.49641263, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657654, g: 0.49641222, b: 0.5748177, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22447,6 +22447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168524866940982602, guid: d491b85222aa6304697857404b4f680a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
       objectReference: {fileID: 0}
     - target: {fileID: 3168524866941208874, guid: d491b85222aa6304697857404b4f680a,
         type: 3}
