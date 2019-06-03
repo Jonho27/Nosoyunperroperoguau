@@ -5,17 +5,22 @@ using UnityEngine;
 public class VistaEnemigo : MonoBehaviour
 {
     public float fieldOfViewAngle = 110f;
-    public bool playerInSight;
+    public bool playerInSight, sonido;
 
     private SphereCollider col;
     private Animator anim;
     private GameObject player;
+
+    public AudioClip sound;
+    AudioSource fuenteAudio;
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         col = GetComponent<SphereCollider>();
+        sonido= true;
+        fuenteAudio = GetComponent<AudioSource> ();
     }
 
     void update()
@@ -38,6 +43,10 @@ public class VistaEnemigo : MonoBehaviour
                 {
                     if(hit.collider.gameObject == player)
                     {
+                        if(sonido == true){
+                            sonido = false;
+                            sonidoPillado(); 
+                        }
                         playerInSight = true;
                         Movimiento.jugadorPillado = true;
                         //anim.SetBool("isWalking", true);
@@ -45,5 +54,12 @@ public class VistaEnemigo : MonoBehaviour
                 }
             }
         }
+    }
+
+    void sonidoPillado(){
+
+        fuenteAudio.clip=sound;
+        fuenteAudio.Play();
+
     }
 }

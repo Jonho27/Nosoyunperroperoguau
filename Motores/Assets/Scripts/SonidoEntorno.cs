@@ -24,9 +24,7 @@ public class SonidoEntorno : MonoBehaviour
 
    void OnTriggerEnter(Collider other){
        if (other.gameObject == player){
-           activo = true;
-           Debug.Log("YES");
-        }
+           activo = true;        }
     }
 
     void OnTriggerExit(Collider other){
