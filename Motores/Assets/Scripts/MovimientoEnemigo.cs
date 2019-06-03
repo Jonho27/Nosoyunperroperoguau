@@ -22,6 +22,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
     public bool HOLA;
     private float pillado;
+    MoimientoCamara camara;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
         HOLA = false;
         pillado = 0;
+        camara = new MoimientoCamara();
 
 
     }
@@ -105,11 +107,12 @@ public class MovimientoEnemigo : MonoBehaviour
 
         else
         {
+            MoimientoCamara.zoom = true;
             pillado += Time.deltaTime;
             nav.speed = 0f;
             anim.SetBool("isWalking", false);
 
-            if(pillado >= 3f)
+            if(pillado >= 1f)
             {
                 //Application.LoadLevel(Application.loadedLevel);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
