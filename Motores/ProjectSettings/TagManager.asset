@@ -19,6 +19,7 @@ TagManager:
   - Mochila
   - Llaves
   - Enemigo
+  - Ganar
   layers:
   - Default
   - TransparentFX

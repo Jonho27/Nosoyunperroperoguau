@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\SonidoEntorno.cs" />
      <Compile Include="Assets\Scripts\VistaAbuelo.cs" />
      <Compile Include="Assets\Scripts\VistaEnemigo.cs" />
+     <Compile Include="Assets\Scripts\WinnerController.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/pauborrellegea/Desktop/Nosoyunperroperoguau/Motores/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
