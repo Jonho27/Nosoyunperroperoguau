@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657654, g: 0.49641222, b: 0.5748177, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657665, g: 0.49641263, b: 0.5748182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8820,8 +8820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -103.3, y: -34}
-  m_SizeDelta: {x: 45.01, y: 39.28}
+  m_AnchoredPosition: {x: -276.7, y: -79}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909902871
 MonoBehaviour:
@@ -8855,7 +8855,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 446c0538d2fa31a4b974e2c5fdccf9f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8ba46834a776485994947d3e4a61aa2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18779,7 +18779,7 @@ GameObject:
   - component: {fileID: 1746514755}
   - component: {fileID: 1746514754}
   m_Layer: 5
-  m_Name: Monedero
+  m_Name: Cartera
   m_TagString: Monedero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18801,8 +18801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -163.6, y: -34}
-  m_SizeDelta: {x: 45.01, y: 39.28}
+  m_AnchoredPosition: {x: -430, y: -79}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746514754
 MonoBehaviour:
@@ -18836,7 +18836,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 734991b9c92b6cb4cb5b4f89f6079e1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b134f2db9354f9c94b73a09dbb3d3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19341,8 +19341,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44, y: -34}
-  m_SizeDelta: {x: 45.01, y: 39.28}
+  m_AnchoredPosition: {x: -124, y: -79}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833335956
 MonoBehaviour:
@@ -19376,7 +19376,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e0596fe18f5769f4a9ecacd183542ced, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a7ece40991d6467bb40e94b57cdf6a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
