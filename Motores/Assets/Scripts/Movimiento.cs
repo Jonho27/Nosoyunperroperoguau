@@ -5,16 +5,21 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour {
 
 
-    public float velocidad = 6f;
+    public float velocidad;
 
     Vector3 movimiento;//contiene la x, y, z del personaje
     Rigidbody playerRigidbody;
     Animator anim;
 
+
+    public static bool jugadorPillado;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
+
+        jugadorPillado = false;
 
     }
 
@@ -26,18 +31,22 @@ public class Movimiento : MonoBehaviour {
         float h = Input.GetAxisRaw("Horizontal");//input para la tecla de movimiento en x
         float v = Input.GetAxisRaw("Vertical");//input para la tecla de movimiento en z
 
-        Move(h, v);
-        Turning();
-        Animating(h, v);
+        if(jugadorPillado == false)
+        {
+            Move(h, v);
+            Turning();
+            Animating(h, v);
+        }
 
     }
 
     void Move(float h, float v)
     {
-
         movimiento.Set(h, 0f, v);//asigna las teclas pulsadas al vector posición del personaje
         movimiento = movimiento.normalized * velocidad * Time.deltaTime;//normaliza el vector para que al ir en diagonal no se tenga ventaja
         playerRigidbody.MovePosition(transform.position + movimiento);//actualiza la posición del personaje según lo que se ha tecleado
+
+
 
     }
 

@@ -47,7 +47,7 @@ public class MovimientoEnemigo : MonoBehaviour
         if (vistaEnemigo.playerInSight == false && EnemyManager.visto == false)
         {
 
-            nav.speed = 3.5f;
+            nav.speed = 4.5f;
 
             if (nav.remainingDistance < nav.stoppingDistance)
             {
@@ -112,7 +112,7 @@ public class MovimientoEnemigo : MonoBehaviour
             nav.speed = 0f;
             anim.SetBool("isWalking", false);
 
-            if(pillado >= 1f)
+            if(pillado >= 2f)
             {
                 //Application.LoadLevel(Application.loadedLevel);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

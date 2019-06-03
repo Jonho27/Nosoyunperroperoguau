@@ -16,6 +16,8 @@ public class MoimientoCamara : MonoBehaviour {
     private float initHeightAtDist;
     private bool dzEnabled;
 
+    float time;
+
     Camera camara;
 
     void Awake()
@@ -24,6 +26,8 @@ public class MoimientoCamara : MonoBehaviour {
         zoom = false;
         //camaraZoom.transform.localPosition = new Vector3(0, 5.6f, 0);
         camara = GetComponent<Camera>();
+
+        time = 0;
     }
 
     void FixedUpdate()
@@ -35,9 +39,27 @@ public class MoimientoCamara : MonoBehaviour {
             objetivo = GameObject.FindGameObjectWithTag("Enemigo").transform;
             targetCamPos = objetivo.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetCamPos, suavidad + Time.deltaTime);
-            camara.orthographicSize = 7.0f;
+
+            if(time >= 0.005)
+            {
+                camara.orthographicSize -= 1.0f;
+                time = 0;
+
+                if(camara.orthographicSize <= 7.0f)
+                {
+                    camara.orthographicSize = 7.0f;
+
+                }
+
+            }
 
         }
+    }
+
+    void Update()
+    {
+        time += Time.deltaTime;
+
     }
 
 
