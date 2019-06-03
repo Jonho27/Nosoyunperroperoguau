@@ -10,9 +10,9 @@ public class MoimientoCamara : MonoBehaviour {
     public static bool zoom;
 
     Vector3 offset;
-    Vector3 targetCamPos
+    Vector3 targetCamPos;
 
-    void Start()
+    void Awake()
     {
         offset = transform.position - objetivo.position;
         zoom = false;

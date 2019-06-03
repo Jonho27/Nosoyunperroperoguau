@@ -22,7 +22,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
     public bool HOLA;
     private float pillado;
-    MoimientoCamara camara;
+    //MoimientoCamara camara;
 
     void Awake()
     {
@@ -36,7 +36,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
         HOLA = false;
         pillado = 0;
-        camara = new MoimientoCamara();
+        //camara = new MoimientoCamara();
 
 
     }
