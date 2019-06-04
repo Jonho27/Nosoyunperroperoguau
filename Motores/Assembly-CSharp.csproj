@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\MonederoManager.cs" />
      <Compile Include="Assets\Scripts\Movimiento.cs" />
      <Compile Include="Assets\Scripts\MovimientoEnemigo.cs" />
+     <Compile Include="Assets\Scripts\pantallaCarga.cs" />
      <Compile Include="Assets\Scripts\Recoger.cs" />
      <Compile Include="Assets\Scripts\RecogerCartera.cs" />
      <Compile Include="Assets\Scripts\RecogerMochila.cs" />
