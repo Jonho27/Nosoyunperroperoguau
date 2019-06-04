@@ -20,7 +20,8 @@ public class Recoger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && activo == true){
             GameControlManager.abrirPuerta = true;
             GameControlManager.objetoCogido = true;
-            Destroy(key);
+            MoimientoCamara.zoomObjeto = 1;
+            Destroy(key, 2f);
         }
    }
 

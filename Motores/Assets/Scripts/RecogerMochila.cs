@@ -20,7 +20,8 @@ public class RecogerMochila : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && activo == true){
             GameControlManager.mochila = true;
             GameControlManager.objetoCogido = true;
-            Destroy(mochila);
+            MoimientoCamara.zoomObjeto = 1;
+            Destroy(mochila, 2f);
         }
    }
 

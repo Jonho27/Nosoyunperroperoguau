@@ -20,7 +20,8 @@ public class RecogerCartera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true && activo == true){
             GameControlManager.cartera = true;
             GameControlManager.objetoCogido = true;
-            Destroy(cartera);
+            MoimientoCamara.zoomObjeto = 1;
+            Destroy(cartera, 2f);
         }
    }
 

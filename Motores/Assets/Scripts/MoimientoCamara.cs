@@ -17,8 +17,11 @@ public class MoimientoCamara : MonoBehaviour {
     private bool dzEnabled;
 
     float time;
+    float time2;
 
     Camera camara;
+
+    public static int zoomObjeto;
 
     void Awake()
     {
@@ -28,6 +31,11 @@ public class MoimientoCamara : MonoBehaviour {
         camara = GetComponent<Camera>();
 
         time = 0;
+        zoomObjeto = 0;
+
+        time2 = 0;
+
+
     }
 
     void FixedUpdate()
@@ -54,11 +62,56 @@ public class MoimientoCamara : MonoBehaviour {
             }
 
         }
+
+        if(zoomObjeto == 1)
+        {
+
+            if(time >= 0.005)
+            {
+                camara.orthographicSize -= 1.0f;
+                time = 0;
+
+                if(camara.orthographicSize <= 7.0f)
+                {
+                    camara.orthographicSize = 7.0f;
+                    if(time2 >= 2)
+                    {
+                        zoomObjeto = 2;
+                        time2 = 0;
+
+                    }
+
+                }
+            }
+        }
+
+        if(zoomObjeto == 2)
+        {
+            if(time >= 0.005)
+            {
+                camara.orthographicSize += 1.0f;
+                time = 0;
+
+                if(camara.orthographicSize >= 20.0f)
+                {
+                    camara.orthographicSize = 20.0f;
+                    zoomObjeto = 0;
+
+                }
+            }
+
+        }
     }
 
     void Update()
     {
         time += Time.deltaTime;
+
+        if(zoomObjeto == 1)
+        {
+            time2 += Time.deltaTime;
+
+        }
 
     }
 

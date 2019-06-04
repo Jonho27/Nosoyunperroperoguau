@@ -31,7 +31,7 @@ public class VistaAbuelo : MonoBehaviour
             Vector3 direction = other.transform.position - transform.position;
             float angle = Vector3.Angle(direction, transform.forward);
 
-            if (angle < fieldOfViewAngle * 5)
+            if (angle < fieldOfViewAngle * 10)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, col.radius))
