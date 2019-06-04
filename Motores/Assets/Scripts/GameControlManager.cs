@@ -47,7 +47,7 @@ public class GameControlManager : MonoBehaviour
             sonarBaño = false;
         }
 
-        if (Input.GetKey(KeyCode.Space) == true && abrirPuerta == true && activo == true){
+        if (Input.GetKey(KeyCode.Space) == true && abrirPuerta == true && mochila == true && cartera == true && activo == true){
             door.transform.Rotate(0,-90,0);
             fuenteAudio.clip=open;
             fuenteAudio.Play();

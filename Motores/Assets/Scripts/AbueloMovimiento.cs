@@ -7,10 +7,7 @@ public class AbueloMovimiento : MonoBehaviour
     private VistaAbuelo vistaEnemigo;
     private Animator anim;
     UnityEngine.AI.NavMeshAgent nav;
-    //private bool alcanzado1;
-    //private bool alcanzado2;
-    //Vector3 posicion1 = new Vector3(55.4f, 0.5f, 177);
-    //Vector3 posicion2 = new Vector3(65.2f, 0.5f, 62.8f);
+ 
 
     public float patrolWaitTime = 1f;
     public Transform[] puntosRuta;
@@ -22,8 +19,6 @@ public class AbueloMovimiento : MonoBehaviour
         vistaEnemigo = GetComponent<VistaAbuelo>();
         anim = GetComponent<Animator>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        // alcanzado1 = false;
-        //alcanzado2 = true;
         puntosRutaIndex = 0;
 
 
